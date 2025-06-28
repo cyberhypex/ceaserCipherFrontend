@@ -61,6 +61,7 @@ export function EncryptPage(props) {
           <label className="block text-lg mb-2">Shift (optional, default is 3):</label>
           <input
             type="number"
+            placeholder='Max value : 2147483647'
             value={shift}
             onChange={(e) => setShift(e.target.value)}
             className="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
