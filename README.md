@@ -42,12 +42,6 @@ A sleek and modern React.js frontend to **encrypt and decrypt messages** using t
 - 🔗 **Axios** – HTTP client to connect with backend
 - ⚡ **Vite** – Next-gen frontend tooling
 
----
 
-## 📦 Installation & Running Locally
 
-1. **Clone the repository**
 
-```bash
-git clone https://github.com/cyberhypex/ceaserCipherFrontend.git
-cd ceaserCipherFrontend
