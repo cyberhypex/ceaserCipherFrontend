@@ -15,13 +15,13 @@ A sleek and modern React.js frontend to **encrypt and decrypt messages** using t
 ## 📸 Preview
 
 ### 🏠 Home Page
-![Home Screenshot](./Screenshot%202025-06-29%20004918.png)
+![Home Screenshot](./screenshots/landingpage.png)
 
 ### 🔒 Encrypt Message
-![Encrypt Screenshot](./Screenshot%202025-06-29%20004942.png)
+![Encrypt Screenshot](./screenshots/encrypt.png)
 
 ### 🔓 Decrypt Message
-![Decrypt Screenshot](./Screenshot%202025-06-29%20005021.png)
+![Decrypt Screenshot](./screenshots/decrypt.png)
 
 ---
 
