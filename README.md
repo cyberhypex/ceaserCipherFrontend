@@ -1,12 +1,53 @@
-# React + Vite
+# 🔐 Caesar Cipher Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek and modern React.js frontend to **encrypt and decrypt messages** using the **Caesar Cipher** technique — one of the oldest known encryption algorithms, famously used by Julius Caesar.
 
-Currently, two official plugins are available:
+> Built with 💙 by [Anshuman](https://github.com/cyberhypex)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌐 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👉 [lucent-bubblegum-9def40.netlify.app](https://lucent-bubblegum-9def40.netlify.app/)
+
+---
+
+## 📸 Preview
+
+### 🏠 Home Page
+![Home Screenshot](./Screenshot%202025-06-29%20004918.png)
+
+### 🔒 Encrypt Message
+![Encrypt Screenshot](./Screenshot%202025-06-29%20004942.png)
+
+### 🔓 Decrypt Message
+![Decrypt Screenshot](./Screenshot%202025-06-29%20005021.png)
+
+---
+
+## 🚀 Features
+
+- Encrypt messages with a custom Caesar shift
+- Decrypt previously encrypted messages
+- Clean, dark-themed UI with TailwindCSS
+- Clipboard copy support for results
+- Responsive layout for all screen sizes
+
+---
+
+## 🛠 Tech Stack
+
+- ⚛️ **React.js** – Frontend framework
+- 🎨 **TailwindCSS** – Utility-first CSS for styling
+- 🔗 **Axios** – HTTP client to connect with backend
+- ⚡ **Vite** – Next-gen frontend tooling
+
+---
+
+## 📦 Installation & Running Locally
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/cyberhypex/ceaserCipherFrontend.git
+cd ceaserCipherFrontend
