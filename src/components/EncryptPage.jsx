@@ -13,6 +13,14 @@ export function EncryptPage(props) {
       alert("Please enter text to encrypt.");
       return;
     }
+    if(shift>2147483647){
+        alert("Please decrease the Shift value");
+        return;
+    }
+    if(shift<0){
+        alert("Shift value can't be negative, Please consider upgrading to a positive value");
+        return ;
+    }
 
     try {
       const response = await axios.get("/encrypt", {
@@ -25,7 +33,7 @@ export function EncryptPage(props) {
       setEncryptedText(response.data);
     } catch (error) {
       console.error("Encryption error:", error);
-      alert("Failed to encrypt text.");
+      alert("Failed to encrypt text");
     }
   };
 
@@ -49,6 +57,7 @@ export function EncryptPage(props) {
         <div>
           <label className="block text-lg mb-2">Enter your text:</label>
           <textarea
+          required
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"

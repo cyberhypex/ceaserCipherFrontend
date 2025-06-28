@@ -13,6 +13,14 @@ export function DecryptPage(props) {
       alert("Please enter the encrypted text.");
       return;
     }
+    if(shift>2147483647){
+        alert("Wrong Shift Value. Kindly verify it");
+        return;
+    }
+    if(shift<0){
+        alert("Wrong Shift Value. Kindly verify it");
+        return ;
+    }
 
     try {
       const response = await axios.get("/decrypt", {
