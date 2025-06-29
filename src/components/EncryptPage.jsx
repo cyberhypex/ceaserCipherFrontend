@@ -7,6 +7,7 @@ export function EncryptPage(props) {
   const [shift, setShift] = useState('');
   const [encryptedText, setEncryptedText] = useState('');
   const navigate = useNavigate();
+  const [loader,setLoader]=useState(false);
 
   const handleEncryptClick = async () => {
     if (!inputText.trim()) {
@@ -23,17 +24,21 @@ export function EncryptPage(props) {
     }
 
     try {
+      setLoader(true);
       const response = await axios.get("/encrypt", {
         params: {
           text: inputText,
           shift: shift || 3,
         }
       });
-
+      setLoader=false
       setEncryptedText(response.data);
     } catch (error) {
       console.error("Encryption error:", error);
       alert("Failed to encrypt text");
+    }
+    finally{
+      setLoader(false);
     }
   };
 
@@ -79,11 +84,16 @@ export function EncryptPage(props) {
 
         <div className="flex gap-4 justify-between flex-wrap">
           <button
-            onClick={handleEncryptClick}
-            className="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-lg font-semibold transition-all"
-          >
-            Encrypt
-          </button>
+  onClick={handleEncryptClick}
+  className={`px-6 py-2 rounded-lg font-semibold transition-all ${
+    loader ? 'bg-gray-600 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'
+  }`}
+  disabled={loader}
+>
+  {loader ? 'Encrypting...' : 'Encrypt'}
+</button>
+
+         
           <button
             onClick={clear}
             className="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg font-semibold transition-all"

@@ -7,8 +7,10 @@ export function DecryptPage(props) {
   const [shift, setShift] = useState('');
   const [decryptedText, setDecryptedText] = useState('');
   const navigate = useNavigate();
+  const [loader,setLoader]=useState(false);
 
   const handleDecryptClick = async () => {
+
     if (!encryptedText.trim()) {
       alert("Please enter the encrypted text.");
       return;
@@ -23,6 +25,7 @@ export function DecryptPage(props) {
     }
 
     try {
+      setLoader(true)
       const response = await axios.get("/decrypt", {
         params: {
           text: encryptedText,
@@ -34,6 +37,9 @@ export function DecryptPage(props) {
     } catch (error) {
       console.error("Decryption error:", error);
       alert("Failed to decrypt text.");
+    }
+    finally{
+      setLoader(false)
     }
   };
 
@@ -77,11 +83,15 @@ export function DecryptPage(props) {
 
         <div className="flex gap-4 justify-between flex-wrap">
           <button
-            onClick={handleDecryptClick}
-            className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-semibold transition-all"
-          >
-            Decrypt
-          </button>
+  onClick={handleDecryptClick}
+  disabled={loader}
+  className={`px-6 py-2 rounded-lg font-semibold transition-all ${
+    loader ? 'bg-gray-600 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+  }`}
+>
+  {loader ? 'Decrypting...' : 'Decrypt'}
+</button>
+
           <button
             onClick={clear}
             className="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg font-semibold transition-all"
