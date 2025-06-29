@@ -31,7 +31,7 @@ export function EncryptPage(props) {
           shift: shift || 3,
         }
       });
-      setLoader=false
+      
       setEncryptedText(response.data);
     } catch (error) {
       console.error("Encryption error:", error);
